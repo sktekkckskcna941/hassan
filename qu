@@ -1,286 +1,793 @@
 {
   "easy": [
     {
-      "q": "ما هي الدالة الخاصة المستخدمة لتهيئة كائن جديد (Constructor) في بايثون؟",
-      "options": ["__init__()", "__new__()", "__create__()"],
-      "correct": 0,
-      "exp": "الدالة __init__() تُستدعى بعد إنشاء الكائن لتهيئة خصائصه."
-    },
-    {
-      "q": "أي نوع من البيانات يُستخدم لتخزين سلسلة من الأحرف في بايثون؟",
-      "options": ["str", "int", "list"],
-      "correct": 0,
-      "exp": "نوع البيانات str يُستخدم لتخزين نصوص أو سلاسل أحرف."
-    },
-    {
-      "q": "ما هي النتيجة عند تنفيذ: print(2 ** 3)؟",
-      "options": ["6", "8", "9"],
+      "q": "ما ناتج print(2 + 3 * 2)؟",
+      "code": "print(2 + 3 * 2)",
+      "options": ["10", "8", "12"],
       "correct": 1,
-      "exp": "العملية ** في بايثون تعني الأس، إذا 2 ** 3 = 8."
+      "exp": "الضرب أولاً: 3*2=6 ثم الجمع: 2+6=8"
     },
     {
-      "q": "أي من التالي يُستخدم للتعليق على سطر واحد في بايثون؟",
-      "options": ["//", "#", "/* */"],
+      "q": "ما الدالة لمعرفة طول النص؟",
+      "options": ["length()", "len()", "size()"],
       "correct": 1,
-      "exp": "الرمز # يُستخدم للتعليق على سطر واحد في بايثون."
+      "exp": "len() تُستخدم لمعرفة الطول"
     },
     {
-      "q": "ما هو نوع البيانات الذي يُستخدم لتخزين القيم الصحيحة؟",
-      "options": ["float", "int", "str"],
+      "q": "كيف ننشئ قائمة؟",
+      "options": ["{1,2,3}", "[1,2,3]", "(1,2,3)"],
       "correct": 1,
-      "exp": "نوع البيانات int يُستخدم لتخزين الأعداد الصحيحة."
+      "exp": "القوائم تستخدم []"
     },
     {
-      "q": "ما هي نتيجة العملية: 10 % 3؟",
-      "options": ["1", "3", "0"],
-      "correct": 0,
-      "exp": "علامة % تُعطي الباقي من القسمة، و10 % 3 = 1."
-    },
-    {
-      "q": "أي من العبارات التالية تُستخدم لإنشاء قائمة فارغة؟",
-      "options": ["[]", "{}", "()"],
-      "correct": 0,
-      "exp": "القوائم في بايثون تُنشأ باستخدام الأقواس المربعة []."
-    },
-    {
-      "q": "ما هي الدالة المستخدمة لمعرفة طول قائمة أو سلسلة نصية؟",
-      "options": ["size()", "len()", "length()"],
-      "correct": 1,
-      "exp": "الدالة len() تُستخدم لمعرفة طول أي قائمة أو سلسلة."
-    },
-    {
-      "q": "أي من التالي يُمثل نوع البيانات المنطقية؟",
+      "q": "ما نوع True؟",
+      "code": "type(True)",
       "options": ["bool", "int", "str"],
       "correct": 0,
-      "exp": "نوع البيانات bool يُمثل القيم True أو False."
+      "exp": "True و False من نوع bool"
     },
     {
-      "q": "ما هو نوع النتيجة عند قسمة عدد صحيح على عدد صحيح باستخدام / في بايثون؟",
-      "options": ["int", "float", "str"],
+      "q": "كيف نضيف عنصر للقائمة؟",
+      "code": "lst = [1,2,3]",
+      "options": ["lst.add(4)", "lst.append(4)", "lst.insert(4)"],
       "correct": 1,
-      "exp": "العملية / دائمًا تُرجع قيمة float حتى لو كانت الأعداد صحيحة."
+      "exp": "append() تضيف للنهاية"
     },
     {
-      "q": "أي من العمليات التالية تُستخدم للجمع بين سلسلتين نصيتين؟",
-      "options": ["+", "-", "*"],
+      "q": "ما ناتج print('Hello' + 'World')؟",
+      "code": "print('Hello' + 'World')",
+      "options": ["HelloWorld", "Hello World", "خطأ"],
       "correct": 0,
-      "exp": "العملية + تُستخدم لدمج أو جمع السلاسل النصية."
+      "exp": "+ يدمج النصوص معاً"
     },
     {
-      "q": "ما هي النتيجة عند تنفيذ: bool(0)؟",
-      "options": ["True", "False", "0"],
+      "q": "كيف ننشئ متغير باسم x وقيمته 5؟",
+      "options": ["x = 5", "var x = 5", "int x = 5"],
+      "correct": 0,
+      "exp": "في Python نستخدم = لتعريف المتغيرات"
+    },
+    {
+      "q": "ما ناتج print(10 % 3)؟",
+      "code": "print(10 % 3)",
+      "options": ["3", "1", "0"],
       "correct": 1,
-      "exp": "القيمة 0 تعتبر False عند التحويل إلى نوع bool."
+      "exp": "% تعطي باقي القسمة: 10 ÷ 3 = 3 والباقي 1"
     },
     {
-      "q": "أي من الهياكل التالية يُستخدم لتخزين أزواج من القيم المفتاحية والقيم؟",
-      "options": ["list", "tuple", "dict"],
+      "q": "كيف نطبع النص 'مرحبا'؟",
+      "options": ["print('مرحبا')", "echo('مرحبا')", "console.log('مرحبا')"],
+      "correct": 0,
+      "exp": "print() هي الدالة للطباعة في Python"
+    },
+    {
+      "q": "ما نوع القيمة 3.14؟",
+      "code": "type(3.14)",
+      "options": ["int", "float", "double"],
+      "correct": 1,
+      "exp": "الأعداد العشرية من نوع float"
+    },
+    {
+      "q": "كيف ننشئ قاموس؟",
+      "options": ["{key: value}", "[key, value]", "(key, value)"],
+      "correct": 0,
+      "exp": "القواميس تستخدم {}"
+    },
+    {
+      "q": "ما ناتج print(2 ** 3)؟",
+      "code": "print(2 ** 3)",
+      "options": ["6", "8", "9"],
+      "correct": 1,
+      "exp": "** تعني الأس: 2^3 = 8"
+    },
+    {
+      "q": "كيف نتحقق إذا كانت x تساوي 5؟",
+      "options": ["if x = 5:", "if x == 5:", "if x === 5:"],
+      "correct": 1,
+      "exp": "== تستخدم للمقارنة، = للتخصيص"
+    },
+    {
+      "q": "ما ناتج print('Python'[0])؟",
+      "code": "print('Python'[0])",
+      "options": ["P", "y", "خطأ"],
+      "correct": 0,
+      "exp": "الفهرس 0 هو الحرف الأول"
+    },
+    {
+      "q": "كيف ننشئ مجموعة (set)؟",
+      "options": ["{1,2,3}", "[1,2,3]", "(1,2,3)"],
+      "correct": 0,
+      "exp": "المجموعات تستخدم {} ولكن بدون مفاتيح"
+    },
+    {
+      "q": "ما ناتج print(bool(0))؟",
+      "code": "print(bool(0))",
+      "options": ["True", "False", "خطأ"],
+      "correct": 1,
+      "exp": "0 يعتبر False في التحويل إلى منطقي"
+    },
+    {
+      "q": "كيف ننشئ دالة؟",
+      "options": ["function my_func():", "def my_func():", "func my_func():"],
+      "correct": 1,
+      "exp": "def تستخدم لتعريف الدوال"
+    },
+    {
+      "q": "ما ناتج print(7 // 2)؟",
+      "code": "print(7 // 2)",
+      "options": ["3.5", "3", "4"],
+      "correct": 1,
+      "exp": "// تقسم وتقرب لأسفل"
+    },
+    {
+      "q": "كيف نتحقق إذا كانت x أكبر من 10؟",
+      "options": ["if x > 10:", "if x >= 10:", "if x < 10:"],
+      "correct": 0,
+      "exp": "> تعني أكبر من"
+    },
+    {
+      "q": "ما ناتج print('hi' * 3)؟",
+      "code": "print('hi' * 3)",
+      "options": ["hihihi", "hi hi hi", "خطأ"],
+      "correct": 0,
+      "exp": "* يكرر النص"
+    },
+    {
+      "q": "كيف نستورد وحدة math؟",
+      "options": ["import math", "include math", "require math"],
+      "correct": 0,
+      "exp": "import تستخدم لاستيراد الوحدات"
+    },
+    {
+      "q": "ما ناتج print(abs(-5))؟",
+      "code": "print(abs(-5))",
+      "options": ["-5", "5", "خطأ"],
+      "correct": 1,
+      "exp": "abs() تعطي القيمة المطلقة"
+    },
+    {
+      "q": "كيف ننشئ حلقة for لتكرار 5 مرات؟",
+      "options": ["for i in 5:", "for i in range(5):", "for i from 0 to 5:"],
+      "correct": 1,
+      "exp": "range(5) يعطي الأرقام من 0 إلى 4"
+    },
+    {
+      "q": "ما ناتج print(round(3.75))؟",
+      "code": "print(round(3.75))",
+      "options": ["3", "4", "3.8"],
+      "correct": 1,
+      "exp": "round() تقرب لأقرب عدد صحيح"
+    },
+    {
+      "q": "كيف نتحقق إذا كان النص فارغاً؟",
+      "code": "s = ''",
+      "options": ["if s == '':", "if s.empty:", "if s is None:"],
+      "correct": 0,
+      "exp": "== '' تتحقق إذا كان النص فارغاً"
+    },
+    {
+      "q": "ما ناتج print(min([3,1,4]))؟",
+      "code": "print(min([3,1,4]))",
+      "options": ["1", "3", "4"],
+      "correct": 0,
+      "exp": "min() تعطي أصغر قيمة في القائمة"
+    },
+    {
+      "q": "كيف ننشئ tuple؟",
+      "options": ["(1,2,3)", "[1,2,3]", "{1,2,3}"],
+      "correct": 0,
+      "exp": "Tuples تستخدم ()"
+    },
+    {
+      "q": "ما ناتج print('hello'.upper())؟",
+      "code": "print('hello'.upper())",
+      "options": ["HELLO", "Hello", "hello"],
+      "correct": 0,
+      "exp": "upper() تحول النص لحروف كبيرة"
+    },
+    {
+      "q": "كيف نستخدم التعليقات في Python؟",
+      "options": ["// تعليق", "# تعليق", "/* تعليق */"],
+      "correct": 1,
+      "exp": "# تستخدم للتعليقات في Python"
+    },
+    {
+      "q": "ما ناتج print(int('5'))؟",
+      "code": "print(int('5'))",
+      "options": ["5", "'5'", "خطأ"],
+      "correct": 0,
+      "exp": "int() تحول النص لعدد صحيح"
+    },
+    {
+      "q": "كيف نستخدم الشرط if-else؟",
+      "options": ["if x>5: ... else: ...", "if x>5 then ... else ...", "if (x>5) { ... } else { ... }"],
+      "correct": 0,
+      "exp": "if ... else ... هي صيغة Python"
+    },
+    {
+      "q": "ما ناتج print(3 == '3')؟",
+      "code": "print(3 == '3')",
+      "options": ["True", "False", "خطأ"],
+      "correct": 1,
+      "exp": "3 عدد و'3' نص، لذا لا يتساويان"
+    },
+    {
+      "q": "كيف نستخدم الدالة input()؟",
+      "options": ["name = input()", "name = get_input()", "name = read()"],
+      "correct": 0,
+      "exp": "input() تقرأ المدخلات من المستخدم"
+    },
+    {
+      "q": "ما ناتج print([1,2] + [3,4])؟",
+      "code": "print([1,2] + [3,4])",
+      "options": ["[1,2,3,4]", "[4,6]", "خطأ"],
+      "correct": 0,
+      "exp": "+ يدمج القوائم"
+    },
+    {
+      "q": "كيف نستخدم الدالة range()؟",
+      "options": ["range(5)", "range(0,5)", "كلاهما صحيح"],
       "correct": 2,
-      "exp": "dict يُستخدم لتخزين البيانات على شكل أزواج مفتاح:قيمة."
+      "exp": "range(5) و range(0,5) يعطيان نفس النتيجة"
     },
     {
-      "q": "ما هي النتيجة عند تنفيذ: len([1,2,3,4])؟",
-      "options": ["3", "4", "5"],
-      "correct": 1,
-      "exp": "الدالة len() تعطي عدد العناصر في القائمة، وهنا 4 عناصر."
-    },
-    {
-      "q": "ما نوع البيانات الناتجة عن العملية: 5 / 2؟",
-      "options": ["int", "float", "complex"],
-      "correct": 1,
-      "exp": "قسمة باستخدام / دائمًا ترجع float، لذلك 5/2 = 2.5."
-    },
-    {
-      "q": "أي من التالي يُمثل قائمة ثابتة غير قابلة للتغيير؟",
-      "options": ["list", "tuple", "dict"],
-      "correct": 1,
-      "exp": "tuple هو نوع بيانات ثابت (immutable) لا يمكن تغييره بعد إنشائه."
-    },
-    {
-      "q": "ما الدالة التي تُستخدم لتحويل نص إلى عدد صحيح؟",
-      "options": ["int()", "str()", "float()"],
+      "q": "ما ناتج print('Python'.find('th'))؟",
+      "code": "print('Python'.find('th'))",
+      "options": ["2", "3", "-1"],
       "correct": 0,
-      "exp": "الدالة int() تُحول النصوص الرقمية إلى أعداد صحيحة."
+      "exp": "find() تعيد موقع النص الجزئي"
     },
     {
-      "q": "ما هي النتيجة عند تنفيذ: type(3.14)؟",
-      "options": ["int", "float", "str"],
-      "correct": 1,
-      "exp": "العدد 3.14 من نوع float."
-    },
-    {
-      "q": "أي من التالي يُستخدم للتكرار عبر عناصر قائمة؟",
-      "options": ["for", "if", "def"],
+      "q": "كيف نستخدم try-except؟",
+      "options": ["try: ... except: ...", "try { ... } catch { ... }", "try ... catch ..."],
       "correct": 0,
-      "exp": "حلقات for تُستخدم للتكرار عبر عناصر أي iterable مثل القائمة."
+      "exp": "try: ... except: ... هي صيغة Python"
     },
     {
-      "q": "ما النتيجة عند تنفيذ: 5 > 3؟",
-      "options": ["True", "False", "Error"],
+      "q": "ما ناتج print(not True)؟",
+      "code": "print(not True)",
+      "options": ["False", "True", "خطأ"],
       "correct": 0,
-      "exp": "5 أكبر من 3، لذلك النتيجة True."
+      "exp": "not تعكس القيمة المنطقية"
     },
     {
-      "q": "أي من الدوال التالية تُستخدم لإخراج نتيجة على الشاشة؟",
-      "options": ["input()", "print()", "len()"],
-      "correct": 1,
-      "exp": "الدالة print() تُستخدم لإظهار النصوص أو القيم على الشاشة."
-    },
-    {
-      "q": "ما نوع البيانات الناتجة عن 'Hello'؟",
-      "options": ["int", "str", "bool"],
-      "correct": 1,
-      "exp": "'Hello' هو نص، أي من نوع str."
-    },
-    {
-      "q": "أي من التالي يُمثل طريقة إنشاء مجموعة (Set) فارغة؟",
-      "options": ["{}", "set()", "[]"],
-      "correct": 1,
-      "exp": "set() تُنشئ مجموعة فارغة، أما {} فهي dict فارغة."
-    },
-    {
-      "q": "ما هي النتيجة عند تنفيذ: 3 != 4؟",
-      "options": ["True", "False", "Error"],
-      "correct": 0,
-      "exp": "الرمز != يعني 'لا يساوي'، و3 != 4 تُعيد True."
-    },
-    {
-      "q": "ما نوع البيانات الناتجة عن True أو False؟",
-      "options": ["int", "bool", "str"],
-      "correct": 1,
-      "exp": "True و False من نوع البيانات المنطقية bool."
-    },
-    {
-      "q": "أي من التالي يُمثل طريقة إضافة عنصر لقائمة؟",
-      "options": ["append()", "add()", "insert()"],
-      "correct": 0,
-      "exp": "append() تُضيف العنصر إلى نهاية القائمة."
-    },
-    {
-      "q": "ما نوع البيانات الناتجة عن العملية: 2 + 3.5؟",
-      "options": ["int", "float", "complex"],
-      "correct": 1,
-      "exp": "عند جمع int مع float، الناتج يكون float."
-    },
-    {
-      "q": "أي من التالي يُمثل نهاية كود شرطية؟",
-      "options": ["endif", ":", "end"],
-      "correct": 1,
-      "exp": "بايثون تستخدم : لتحديد بداية جسم الشرطية."
-    },
-    {
-      "q": "ما النتيجة عند تنفيذ: bool('')؟",
-      "options": ["True", "False", "Error"],
-      "correct": 1,
-      "exp": "سلسلة فارغة '' تُعتبر False عند التحويل إلى bool."
-    },
-    {
-      "q": "أي من التالي يُستخدم لكتابة حلقة لا نهائية؟",
-      "options": ["while True:", "for i in range(0):", "if True:"],
-      "correct": 0,
-      "exp": "while True: تُنشئ حلقة تستمر إلى أن تُكسر."
-    },
-    {
-      "q": "ما نوع البيانات الناتجة عن العملية: 5 // 2؟",
-      "options": ["int", "float", "str"],
-      "correct": 0,
-      "exp": "القسمة // تُعطي الجزء الصحيح فقط من القسمة، أي int."
-    },
-    {
-      "q": "ما الدالة التي تُستخدم لتحويل نص إلى عدد عشري؟",
-      "options": ["int()", "float()", "str()"],
-      "correct": 1,
-      "exp": "float() تُحول النصوص الرقمية إلى أعداد عشرية."
-    },
-    {
-      "q": "أي من التالي يُمثل طريقة الوصول لعنصر في قائمة؟",
-      "options": ["list(index)", "list[index]", "list{index}"],
-      "correct": 1,
-      "exp": "list[index] تُستخدم للوصول إلى العنصر في القائمة."
-    },
-    {
-      "q": "ما النتيجة عند تنفيذ: 'abc' * 3؟",
-      "options": ["abcabcabc", "abc3", "Error"],
-      "correct": 0,
-      "exp": "تكرار السلاسل النصية باستخدام * ينتج دمج النص عدة مرات."
-    },
-    {
-      "q": "أي من التالي يُمثل طريقة حذف عنصر من قائمة؟",
-      "options": ["remove()", "delete()", "discard()"],
-      "correct": 0,
-      "exp": "remove() تُستخدم لحذف عنصر محدد من القائمة."
-    },
-    {
-      "q": "ما هي نتيجة العملية: 7 % 7؟",
-      "options": ["0", "1", "7"],
-      "correct": 0,
-      "exp": "الباقي من 7 مقسومة على 7 هو 0."
-    },
-    {
-      "q": "ما نوع البيانات الناتجة عن العملية: 3 + 2j؟",
-      "options": ["int", "float", "complex"],
+      "q": "كيف نستخدم الدالة open()؟",
+      "options": ["open('file.txt')", "open('file.txt', 'r')", "كلاهما صحيح"],
       "correct": 2,
-      "exp": "3 + 2j هو عدد مركب من نوع complex."
+      "exp": "'r' هو الوضع الافتراضي لقراءة الملفات"
     },
     {
-      "q": "أي من التالي يُستخدم للحصول على عنصر من قاموس باستخدام المفتاح؟",
-      "options": ["dict[key]", "dict.value()", "dict.index()"],
+      "q": "ما ناتج print(3 > 2 and 4 < 5)؟",
+      "code": "print(3 > 2 and 4 < 5)",
+      "options": ["True", "False", "خطأ"],
       "correct": 0,
-      "exp": "dict[key] تُستخدم للوصول للقيمة المرتبطة بالمفتاح."
+      "exp": "and تعطي True إذا كان الطرفان صحيحين"
     },
     {
-      "q": "ما الدالة التي تُستخدم لقراءة إدخال المستخدم من لوحة المفاتيح؟",
-      "options": ["input()", "print()", "read()"],
+      "q": "كيف نستخدم الدالة format()؟",
+      "code": "name = 'Ahmed'",
+      "options": ["'Hello {}'.format(name)", "f'Hello {name}'", "كلاهما صحيح"],
+      "correct": 2,
+      "exp": "كلا الطريقتين صحيحتان لتنسيق النصوص"
+    },
+    {
+      "q": "ما ناتج print([i for i in range(3)])؟",
+      "code": "print([i for i in range(3)])",
+      "options": ["[0,1,2]", "[1,2,3]", "[0,1]"],
       "correct": 0,
-      "exp": "الدالة input() تُستخدم للحصول على نص من المستخدم."
+      "exp": "قائمة الاستيعاب تنشئ قائمة من الأرقام"
     },
     {
-      "q": "أي من التالي يُستخدم لتحويل نص إلى جميع الأحرف الكبيرة؟",
-      "options": ["upper()", "lower()", "capitalize()"],
+      "q": "كيف نستخدم lambda؟",
+      "options": ["lambda x: x*2", "function(x) {return x*2}", "(x) => x*2"],
       "correct": 0,
-      "exp": "upper() تُحول جميع الأحرف إلى كبيرة."
+      "exp": "lambda تنشئ دوالاً صغيرة بدون اسم"
     },
     {
-      "q": "ما النتيجة عند تنفيذ: 'Python'[0]؟",
-      "options": ["P", "y", "Python"],
+      "q": "ما ناتج print('a' in 'apple')؟",
+      "code": "print('a' in 'apple')",
+      "options": ["True", "False", "خطأ"],
       "correct": 0,
-      "exp": "العنصر الأول في السلسلة هو الحرف 'P'."
+      "exp": "in تتحقق إذا كان الحرف موجوداً في النص"
     },
     {
-      "q": "ما الدالة التي تُستخدم للتحقق مما إذا كانت جميع الأحرف نصية؟",
-      "options": ["isalpha()", "isdigit()", "isalnum()"],
+      "q": "كيف نستخدم الدالة enumerate()؟",
+      "options": ["for i, item in enumerate(lst):", "for i in enumerate(lst):", "for item in enumerate(lst):"],
       "correct": 0,
-      "exp": "isalpha() تُرجع True إذا كانت جميع الأحرف حروف."
+      "exp": "enumerate() تعيد الفهرس والقيمة"
     },
     {
-      "q": "أي من التالي يُمثل طريقة التحقق من وجود مفتاح في قاموس؟",
-      "options": ["key in dict", "dict.has()", "key.exists()"],
+      "q": "ما ناتج print(' hello '.strip())؟",
+      "code": "print(' hello '.strip())",
+      "options": ["hello", "'hello'", "خطأ"],
       "correct": 0,
-      "exp": "key in dict تُرجع True إذا كان المفتاح موجود في القاموس."
+      "exp": "strip() تزيل المسافات من الطرفين"
     },
     {
-      "q": "ما هي النتيجة عند تنفيذ: 0.1 + 0.2 == 0.3؟",
-      "options": ["True", "False", "Error"],
-      "correct": 1,
-      "exp": "للأعداد العشرية، قد يحدث خطأ دقة، لذلك النتيجة False."
+      "q": "كيف نستخدم الدالة zip()؟",
+      "options": ["for a,b in zip(lst1, lst2):", "zip(lst1, lst2)", "كلاهما صحيح"],
+      "correct": 2,
+      "exp": "zip() تجمع عناصر من عدة قوائم"
     },
     {
-      "q": "ما نوع البيانات الناتجة عن العملية: '5' + '2'؟",
-      "options": ["int", "str", "float"],
-      "correct": 1,
-      "exp": "جمع سلسلتين نصيتين يؤدي إلى دمج النصوص، أي str."
-    },
-    {
-      "q": "أي من التالي يُستخدم لإنشاء نسخة من قائمة؟",
-      "options": ["copy()", "clone()", "duplicate()"],
+      "q": "ما ناتج print(any([False, True, False]))؟",
+      "code": "print(any([False, True, False]))",
+      "options": ["True", "False", "خطأ"],
       "correct": 0,
-      "exp": "copy() تُنشئ نسخة من القائمة الأصلية."
+      "exp": "any() تعطي True إذا كان أحد العناصر True"
     },
     {
-      "q": "ما الدالة التي تُستخدم لإزالة المسافات من بداية ونهاية النص؟",
-      "options": ["strip()", "trim()", "clean()"],
+      "q": "كيف نستخدم الدالة filter()؟",
+      "options": ["filter(lambda x: x>0, lst)", "lst.filter(lambda x: x>0)", "كلاهما صحيح"],
       "correct": 0,
-      "exp": "strip() تُزيل المسافات من البداية والنهاية."
+      "exp": "filter() ترشح العناصر بناءً على شرط"
+    },
+    {
+      "q": "ما ناتج print('Python'.replace('P','J'))؟",
+      "code": "print('Python'.replace('P','J'))",
+      "options": ["Jython", "Python", "خطأ"],
+      "correct": 0,
+      "exp": "replace() تستبدل جزءاً من النص"
+    },
+    {
+      "q": "كيف نستخدم الدالة map()؟",
+      "options": ["map(lambda x: x*2, lst)", "lst.map(lambda x: x*2)", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "map() تطبق دالة على كل عنصر"
+    },
+    {
+      "q": "ما ناتج print('Python'.split('t'))؟",
+      "code": "print('Python'.split('t'))",
+      "options": ["['Py','hon']", "['Pyth','on']", "خطأ"],
+      "correct": 0,
+      "exp": "split() تقسم النص عند الحرف المحدد"
+    },
+    {
+      "q": "كيف نستخدم الدالة sorted()؟",
+      "options": ["sorted(lst)", "lst.sorted()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "sorted() ترتب القائمة"
+    },
+    {
+      "q": "ما ناتج print('Python'[1:4])؟",
+      "code": "print('Python'[1:4])",
+      "options": ["yth", "Pyt", "thon"],
+      "correct": 0,
+      "exp": "التقطيع من الفهرس 1 إلى 3"
+    },
+    {
+      "q": "كيف نستخدم الدالة reversed()؟",
+      "options": ["reversed(lst)", "lst.reversed()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "reversed() تعكس ترتيب العناصر"
+    },
+    {
+      "q": "ما ناتج print('Python'.islower())؟",
+      "code": "print('Python'.islower())",
+      "options": ["False", "True", "خطأ"],
+      "correct": 0,
+      "exp": "islower() تتحقق إذا كانت كل الحروف صغيرة"
+    },
+    {
+      "q": "كيف نستخدم الدالة sum()؟",
+      "options": ["sum(lst)", "lst.sum()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "sum() تجمع قيم القائمة"
+    },
+    {
+      "q": "ما ناتج print('Python'.count('y'))؟",
+      "code": "print('Python'.count('y'))",
+      "options": ["1", "0", "2"],
+      "correct": 0,
+      "exp": "count() تعد تكرارات الحرف"
+    },
+    {
+      "q": "كيف نستخدم الدالة max()؟",
+      "options": ["max(lst)", "lst.max()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "max() تعطي أكبر قيمة في القائمة"
+    },
+    {
+      "q": "ما ناتج print('Python'[-1])؟",
+      "code": "print('Python'[-1])",
+      "options": ["n", "P", "خطأ"],
+      "correct": 0,
+      "exp": "الفهرس -1 يعني آخر عنصر"
+    },
+    {
+      "q": "كيف نستخدم الدالة all()؟",
+      "options": ["all(lst)", "lst.all()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "all() تعطي True إذا كانت كل العناصر True"
+    },
+    {
+      "q": "ما ناتج print('Python'.startswith('P'))؟",
+      "code": "print('Python'.startswith('P'))",
+      "options": ["True", "False", "خطأ"],
+      "correct": 0,
+      "exp": "startswith() تتحقق إذا كان النص يبدأ بحرف معين"
+    },
+    {
+      "q": "كيف نستخدم الدالة isinstance()؟",
+      "options": ["isinstance(x, int)", "x.isinstance(int)", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "isinstance() تتحقق من نوع الكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.endswith('n'))؟",
+      "code": "print('Python'.endswith('n'))",
+      "options": ["True", "False", "خطأ"],
+      "correct": 0,
+      "exp": "endswith() تتحقق إذا كان النص ينتهي بحرف معين"
+    },
+    {
+      "q": "كيف نستخدم الدالة dir()؟",
+      "options": ["dir(obj)", "obj.dir()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "dir() تعرض خصائص وطرق الكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.isalpha())؟",
+      "code": "print('Python'.isalpha())",
+      "options": ["True", "False", "خطأ"],
+      "correct": 0,
+      "exp": "isalpha() تتحقق إذا كان النص يحتوي على أحرف فقط"
+    },
+    {
+      "q": "كيف نستخدم الدالة help()؟",
+      "options": ["help(obj)", "obj.help()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "help() تعرض وثائق الكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.isdigit())؟",
+      "code": "print('Python'.isdigit())",
+      "options": ["False", "True", "خطأ"],
+      "correct": 0,
+      "exp": "isdigit() تتحقق إذا كان النص يحتوي على أرقام فقط"
+    },
+    {
+      "q": "كيف نستخدم الدالة id()؟",
+      "options": ["id(obj)", "obj.id()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "id() تعيد معرف الكائن في الذاكرة"
+    },
+    {
+      "q": "ما ناتج print('Python'.isalnum())؟",
+      "code": "print('Python'.isalnum())",
+      "options": ["True", "False", "خطأ"],
+      "correct": 0,
+      "exp": "isalnum() تتحقق إذا كان النص يحتوي على أحرف وأرقام فقط"
+    },
+    {
+      "q": "كيف نستخدم الدالة globals()؟",
+      "options": ["globals()", "global.vars()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "globals() تعيد قاموس المتغيرات العامة"
+    },
+    {
+      "q": "ما ناتج print('Python'.isspace())؟",
+      "code": "print('Python'.isspace())",
+      "options": ["False", "True", "خطأ"],
+      "correct": 0,
+      "exp": "isspace() تتحقق إذا كان النص يحتوي على مسافات فقط"
+    },
+    {
+      "q": "كيف نستخدم الدالة locals()؟",
+      "options": ["locals()", "local.vars()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "locals() تعيد قاموس المتغيرات المحلية"
+    },
+    {
+      "q": "ما ناتج print('Python'.istitle())؟",
+      "code": "print('Python'.istitle())",
+      "options": ["True", "False", "خطأ"],
+      "correct": 0,
+      "exp": "istitle() تتحقق إذا كان النص يبدأ بحرف كبير والباقي صغير"
+    },
+    {
+      "q": "كيف نستخدم الدالة vars()؟",
+      "options": ["vars(obj)", "obj.vars()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "vars() تعيد خصائص الكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.capitalize())؟",
+      "code": "print('Python'.capitalize())",
+      "options": ["Python", "python", "خطأ"],
+      "correct": 0,
+      "exp": "capitalize() تحول الحرف الأول لكبير والباقي صغير"
+    },
+    {
+      "q": "كيف نستخدم الدالة type()؟",
+      "options": ["type(obj)", "obj.type()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "type() تعيد نوع الكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.swapcase())؟",
+      "code": "print('Python'.swapcase())",
+      "options": ["pYTHON", "PYTHON", "python"],
+      "correct": 0,
+      "exp": "swapcase() تعكس حالة الأحرف"
+    },
+    {
+      "q": "كيف نستخدم الدالة callable()؟",
+      "options": ["callable(obj)", "obj.callable()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "callable() تتحقق إذا كان الكائن يمكن استدعاؤه كدالة"
+    },
+    {
+      "q": "ما ناتج print('Python'.title())؟",
+      "code": "print('Python'.title())",
+      "options": ["Python", "Python", "خطأ"],
+      "correct": 0,
+      "exp": "title() تحول أول حرف من كل كلمة لكبير"
+    },
+    {
+      "q": "كيف نستخدم الدالة hasattr()؟",
+      "options": ["hasattr(obj, 'attr')", "obj.hasattr('attr')", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "hasattr() تتحقق إذا كان الكائن يحتوي على خاصية معينة"
+    },
+    {
+      "q": "ما ناتج print('Python'.center(10))؟",
+      "code": "print('Python'.center(10))",
+      "options": ["  Python  ", "Python    ", "    Python"],
+      "correct": 0,
+      "exp": "center() توسع النص ليشغل عرضاً محدداً"
+    },
+    {
+      "q": "كيف نستخدم الدالة getattr()؟",
+      "options": ["getattr(obj, 'attr')", "obj.getattr('attr')", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "getattr() تعيد قيمة خاصية الكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.ljust(10))؟",
+      "code": "print('Python'.ljust(10))",
+      "options": ["Python    ", "  Python  ", "    Python"],
+      "correct": 0,
+      "exp": "ljust() توسع النص لليمين"
+    },
+    {
+      "q": "كيف نستخدم الدالة setattr()؟",
+      "options": ["setattr(obj, 'attr', value)", "obj.setattr('attr', value)", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "setattr() تضبط قيمة خاصية الكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.rjust(10))؟",
+      "code": "print('Python'.rjust(10))",
+      "options": ["    Python", "Python    ", "  Python  "],
+      "correct": 0,
+      "exp": "rjust() توسع النص لليسار"
+    },
+    {
+      "q": "كيف نستخدم الدالة delattr()؟",
+      "options": ["delattr(obj, 'attr')", "obj.delattr('attr')", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "delattr() تحذف خاصية الكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.zfill(10))؟",
+      "code": "print('Python'.zfill(10))",
+      "options": ["0000Python", "Python0000", "خطأ"],
+      "correct": 0,
+      "exp": "zfill() تملأ النص بأصفار من اليسار"
+    },
+    {
+      "q": "كيف نستخدم الدالة property()؟",
+      "options": ["property(fget, fset, fdel)", "obj.property()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "property() تنشئ خاصية للكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.partition('t'))؟",
+      "code": "print('Python'.partition('t'))",
+      "options": ["('Py', 't', 'hon')", "('Pyth', 't', 'on')", "خطأ"],
+      "correct": 0,
+      "exp": "partition() تقسم النص إلى 3 أجزاء"
+    },
+    {
+      "q": "كيف نستخدم الدالة staticmethod()؟",
+      "options": ["staticmethod(func)", "obj.staticmethod()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "staticmethod() تنشئ دالة ثابتة للكلاس"
+    },
+    {
+      "q": "ما ناتج print('Python'.rpartition('t'))؟",
+      "code": "print('Python'.rpartition('t'))",
+      "options": ["('Py', 't', 'hon')", "('Pyth', 't', 'on')", "خطأ"],
+      "correct": 0,
+      "exp": "rpartition() تقسم النص من اليمين"
+    },
+    {
+      "q": "كيف نستخدم الدالة classmethod()؟",
+      "options": ["classmethod(func)", "obj.classmethod()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "classmethod() تنشئ دالة كلاس"
+    },
+    {
+      "q": "ما ناتج print('Python'.rsplit('t'))؟",
+      "code": "print('Python'.rsplit('t'))",
+      "options": ["['Py','hon']", "['Pyth','on']", "خطأ"],
+      "correct": 0,
+      "exp": "rsplit() تقسم النص من اليمين"
+    },
+    {
+      "q": "كيف نستخدم الدالة super()؟",
+      "options": ["super()", "obj.super()", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "super() تعيد كائن الأب"
+    },
+    {
+      "q": "ما ناتج print('Python'.splitlines())؟",
+      "code": "print('Python'.splitlines())",
+      "options": ["['Python']", "['P','y','t','h','o','n']", "خطأ"],
+      "correct": 0,
+      "exp": "splitlines() تقسم النص عند الأسطر الجديدة"
+    },
+    {
+      "q": "كيف نستخدم الدالة __init__()؟",
+      "options": ["def __init__(self):", "def init(self):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__init__() هي دالة البناء للكلاس"
+    },
+    {
+      "q": "ما ناتج print('Python'.join(['a','b']))؟",
+      "code": "print('Python'.join(['a','b']))",
+      "options": ["aPythonb", "a b", "خطأ"],
+      "correct": 0,
+      "exp": "join() تدمج القائمة باستخدام النص كفاصل"
+    },
+    {
+      "q": "كيف نستخدم الدالة __str__()؟",
+      "options": ["def __str__(self):", "def str(self):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__str__() تعيد تمثيل النص للكائن"
+    },
+    {
+      "q": "ما ناتج print('Python'.encode())؟",
+      "code": "print('Python'.encode())",
+      "options": ["b'Python'", "'Python'", "خطأ"],
+      "correct": 0,
+      "exp": "encode() تحول النص لبايتات"
+    },
+    {
+      "q": "كيف نستخدم الدالة __repr__()؟",
+      "options": ["def __repr__(self):", "def repr(self):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__repr__() تعيد تمثيل الكائن للتصحيح"
+    },
+    {
+      "q": "ما ناتج print(b'Python'.decode())؟",
+      "code": "print(b'Python'.decode())",
+      "options": ["Python", "b'Python'", "خطأ"],
+      "correct": 0,
+      "exp": "decode() تحول البايتات لنص"
+    },
+    {
+      "q": "كيف نستخدم الدالة __len__()؟",
+      "options": ["def __len__(self):", "def len(self):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__len__() تعيد طول الكائن"
+    },
+    {
+      "q": "ما ناتج print(ascii('Python'))؟",
+      "code": "print(ascii('Python'))",
+      "options": ["'Python'", "Python", "خطأ"],
+      "correct": 0,
+      "exp": "ascii() تعيد تمثيل ASCII للنص"
+    },
+    {
+      "q": "كيف نستخدم الدالة __getitem__()؟",
+      "options": ["def __getitem__(self, key):", "def getitem(self, key):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__getitem__() تمكن الكائن من استخدام الفهرس"
+    },
+    {
+      "q": "ما ناتج print(bin(5))؟",
+      "code": "print(bin(5))",
+      "options": ["0b101", "101", "خطأ"],
+      "correct": 0,
+      "exp": "bin() تحول العدد لنظام ثنائي"
+    },
+    {
+      "q": "كيف نستخدم الدالة __setitem__()؟",
+      "options": ["def __setitem__(self, key, value):", "def setitem(self, key, value):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__setitem__() تمكن الكائن من تعيين القيم بالفهرس"
+    },
+    {
+      "q": "ما ناتج print(oct(8))؟",
+      "code": "print(oct(8))",
+      "options": ["0o10", "10", "خطأ"],
+      "correct": 0,
+      "exp": "oct() تحول العدد لنظام ثماني"
+    },
+    {
+      "q": "كيف نستخدم الدالة __delitem__()؟",
+      "options": ["def __delitem__(self, key):", "def delitem(self, key):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__delitem__() تمكن الكائن من حذف العناصر بالفهرس"
+    },
+    {
+      "q": "ما ناتج print(hex(16))؟",
+      "code": "print(hex(16))",
+      "options": ["0x10", "10", "خطأ"],
+      "correct": 0,
+      "exp": "hex() تحول العدد لنظام ست عشري"
+    },
+    {
+      "q": "كيف نستخدم الدالة __iter__()؟",
+      "options": ["def __iter__(self):", "def iter(self):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__iter__() تجعل الكائن قابلاً للتكرار"
+    },
+    {
+      "q": "ما ناتج print(chr(65))؟",
+      "code": "print(chr(65))",
+      "options": ["A", "65", "خطأ"],
+      "correct": 0,
+      "exp": "chr() تحول الرقم لحرف Unicode"
+    },
+    {
+      "q": "كيف نستخدم الدالة __next__()؟",
+      "options": ["def __next__(self):", "def next(self):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__next__() تعيد العنصر التالي في التكرار"
+    },
+    {
+      "q": "ما ناتج print(ord('A'))؟",
+      "code": "print(ord('A'))",
+      "options": ["65", "A", "خطأ"],
+      "correct": 0,
+      "exp": "ord() تحول الحرف لرقم Unicode"
+    },
+    {
+      "q": "كيف نستخدم الدالة __contains__()؟",
+      "options": ["def __contains__(self, item):", "def contains(self, item):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__contains__() تمكن الكائن من استخدام in"
+    },
+    {
+      "q": "ما ناتج print(pow(2, 3))؟",
+      "code": "print(pow(2, 3))",
+      "options": ["8", "6", "9"],
+      "correct": 0,
+      "exp": "pow() تحسب الأس: 2^3 = 8"
+    },
+    {
+      "q": "كيف نستخدم الدالة __call__()؟",
+      "options": ["def __call__(self, *args):", "def call(self, *args):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__call__() تجعل الكائن قابلاً للاستدعاء"
+    },
+    {
+      "q": "ما ناتج print(divmod(7, 3))؟",
+      "code": "print(divmod(7, 3))",
+      "options": ["(2, 1)", "(2, 2)", "(3, 1)"],
+      "correct": 0,
+      "exp": "divmod() تعيد ناتج القسمة والباقي"
+    },
+    {
+      "q": "كيف نستخدم الدالة __enter__()؟",
+      "options": ["def __enter__(self):", "def enter(self):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__enter__() تدير بداية كتلة with"
+    },
+    {
+      "q": "ما ناتج print(complex(3, 4))؟",
+      "code": "print(complex(3, 4))",
+      "options": ["(3+4j)", "3+4j", "خطأ"],
+      "correct": 0,
+      "exp": "complex() تنشئ عدداً مركباً"
+    },
+    {
+      "q": "كيف نستخدم الدالة __exit__()؟",
+      "options": ["def __exit__(self, type, value, traceback):", "def exit(self, type, value, traceback):", "كلاهما صحيح"],
+      "correct": 0,
+      "exp": "__exit__() تدير نهاية كتلة with"
     }
   ]
 }
