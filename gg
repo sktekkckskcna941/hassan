@@ -1,1 +1,186 @@
-hh
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Client</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'IBM Plex Sans Arabic',sans-serif}
+        body{background:#f8fafc;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+        .container{background:white;border-radius:16px;padding:40px;box-shadow:0 10px 40px rgba(0,0,0,0.08);max-width:480px;width:100%;border:1px solid #e2e8f0}
+        .header{text-align:center;margin-bottom:32px}
+        .logo{font-size:24px;font-weight:600;color:#1e293b;margin-bottom:8px;letter-spacing:-0.5px}
+        .subtitle{color:#64748b;font-size:14px}
+        .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+        .stat-item{text-align:center;padding:20px;border-radius:12px;background:#f1f5f9;border:1px solid #e2e8f0}
+        .stat-value{font-size:20px;font-weight:600;color:#0f172a}
+        .stat-label{font-size:12px;color:#64748b;margin-top:4px}
+        .progress{height:6px;background:#e2e8f0;border-radius:3px;margin:24px 0;overflow:hidden}
+        .progress-bar{height:100%;background:#3b82f6;width:0%;transition:width 0.3s}
+        .btn{width:100%;padding:14px;border:1px solid #d1d5db;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.2s;margin-bottom:12px;background:white;color:#374151}
+        .btn:hover{background:#f8fafc;border-color:#3b82f6}
+        .btn-primary{background:#3b82f6;color:white;border-color:#3b82f6}
+        .btn-primary:hover{background:#2563eb}
+        .btn-danger{color:#dc2626;border-color:#d1d5db}
+        .btn-danger:hover{background:#fef2f2;border-color:#dc2626}
+        .log{height:140px;overflow-y:auto;background:#f8fafc;border-radius:10px;padding:16px;border:1px solid #e2e8f0;font-size:13px;line-height:1.6}
+        .log-item{margin-bottom:8px;padding:6px 0;border-bottom:1px solid #f1f5f9}
+        .log-success{color:#16a34a}
+        .log-error{color:#dc2626}
+        .log-info{color:#64748b}
+        .footer{text-align:center;margin-top:24px;color:#94a3b8;font-size:12px}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Email Client</div>
+            <div class="subtitle">أداة إرسال البريد الإلكتروني</div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="sent">0</div>
+                <div class="stat-label">تم الإرسال</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="failed">0</div>
+                <div class="stat-label">فشل الإرسال</div>
+            </div>
+        </div>
+        
+        <div class="progress">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+        
+        <button class="btn btn-primary" onclick="startSending()">بدء الإرسال</button>
+        <button class="btn btn-danger" onclick="stopSending()">إيقاف الإرسال</button>
+        <button class="btn" onclick="addSender()">إضافة مرسل</button>
+        <button class="btn" onclick="addRecipient()">إضافة مستلم</button>
+        <button class="btn" onclick="addMessage()">إضافة رسالة</button>
+        
+        <div style="margin:20px 0">
+            <div class="log" id="log">
+                <div class="log-item log-info">جاهز للبدء. يرجى إضافة البيانات أولاً</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Email Client v1.0
+        </div>
+    </div>
+
+    <script>
+        let data = {
+            senders: [],
+            recipients: [],
+            messages: [],
+            interval: 15,
+            count: 10000,
+            isSending: false,
+            sent: 0,
+            failed: 0
+        };
+
+        function log(msg, type = 'info') {
+            const logEl = document.getElementById('log');
+            const className = `log-item log-${type}`;
+            logEl.innerHTML += `<div class="${className}">${new Date().toLocaleTimeString()} - ${msg}</div>`;
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+
+        function updateStats() {
+            document.getElementById('sent').textContent = data.sent;
+            document.getElementById('failed').textContent = data.failed;
+            document.getElementById('progress').style.width = `${(data.sent / data.count) * 100}%`;
+        }
+
+        function addSender() {
+            const input = prompt('أدخل البريد الإلكتروني:كلمة المرور (مثال: user@example.com:password123)');
+            if (input) {
+                const parts = input.split(':');
+                if (parts.length === 2) {
+                    const email = parts[0].trim();
+                    const password = parts[1].trim();
+                    data.senders.push({email, password});
+                    log(`تم إضافة مرسل: ${email}`, 'success');
+                } else {
+                    log('تنسيق غير صحيح. استخدم: email:password', 'error');
+                }
+            }
+        }
+
+        function addRecipient() {
+            const email = prompt('البريد الإلكتروني للمستلم:');
+            if (email) {
+                data.recipients.push(email);
+                log(`تم إضافة مستلم: ${email}`, 'success');
+            }
+        }
+
+        function addMessage() {
+            const subject = prompt('عنوان الرسالة:');
+            const body = prompt('نص الرسالة:');
+            if (subject && body) {
+                data.messages.push({subject, body});
+                log(`تم إضافة رسالة: ${subject}`, 'success');
+            }
+        }
+
+        async function sendEmail(sender, recipient, message) {
+            try {
+                const email = {
+                    from: sender.email,
+                    to: recipient,
+                    subject: message.subject,
+                    text: message.body
+                };
+                
+                // محاكاة الإرسال الحقيقي
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // في التطبيق الحقيقي، استخدم SMTP أو API
+                const success = Math.random() > 0.2;
+                return success;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        async function startSending() {
+            if (data.senders.length === 0 || data.recipients.length === 0 || data.messages.length === 0) {
+                log('يرجى إضافة مرسلين ومستلمين ورسائل أولاً', 'error');
+                return;
+            }
+
+            data.isSending = true;
+            log('بدء عملية الإرسال...', 'success');
+
+            while (data.isSending && data.sent < data.count) {
+                const sender = data.senders[Math.floor(Math.random() * data.senders.length)];
+                const recipient = data.recipients[Math.floor(Math.random() * data.recipients.length)];
+                const message = data.messages[Math.floor(Math.random() * data.messages.length)];
+
+                const success = await sendEmail(sender, recipient, message);
+                
+                if (success) {
+                    data.sent++;
+                    log(`تم إرسال الرسالة ${data.sent} إلى ${recipient}`, 'success');
+                } else {
+                    data.failed++;
+                    log(`فشل إرسال الرسالة ${data.failed}`, 'error');
+                }
+                
+                updateStats();
+                await new Promise(resolve => setTimeout(resolve, data.interval * 1000));
+            }
+        }
+
+        function stopSending() {
+            data.isSending = false;
+            log('تم إيقاف الإرسال', 'error');
+        }
+    </script>
+</body>
+</html>
